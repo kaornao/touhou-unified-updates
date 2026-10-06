@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>东方两作一体化修改器 · 更新中心</title>
+  <meta name="description" content="苍神缘起V与幻想魔录W原生窗口工具的版本公告、下载和使用说明。">
+  <style>
+    :root{color-scheme:dark;--bg:#111824;--panel:#1b2638;--text:#e8eef7;--muted:#a7b7ce;--blue:#79b8ff}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.8 system-ui,"Microsoft YaHei",sans-serif}
+    main{max-width:920px;margin:auto;padding:64px 24px 40px}header{padding-bottom:34px;border-bottom:1px solid #34435b}
+    .eyebrow{color:var(--blue);font-size:14px;letter-spacing:.1em}h1{font-size:clamp(28px,5vw,42px);line-height:1.3;margin:14px 0}
+    p{color:var(--muted);margin:10px 0}.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+    a{color:var(--blue)}.button{display:inline-block;padding:11px 22px;background:#3973bc;color:white;border-radius:8px;text-decoration:none;font-weight:600}
+    .button.secondary{background:var(--panel);border:1px solid #3b4d69}.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:30px 0}
+    article,section{background:var(--panel);padding:24px;border-radius:12px}h2{font-size:21px;margin:0 0 10px}h3{font-size:17px;margin:15px 0 4px}
+    ul{padding-left:23px;margin:12px 0}small,footer{color:var(--muted);font-size:13px}footer{padding:26px 0}.version{font-size:20px;font-weight:700;color:var(--blue)}
+    .notice{border-left:3px solid var(--blue);padding-left:16px;margin:20px 0}#notes{white-space:pre-wrap;color:var(--text)}
+    @media(max-width:650px){main{padding-top:36px}.cards{grid-template-columns:1fr}.actions a{width:100%;text-align:center}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">东方两作 · 原生桌面工具</div>
+    <h1>一个窗口，管理两作。</h1>
+    <p>苍神缘起 V 与幻想魔录 W 的便利操作、战斗辅助和存档编辑。</p>
+    <p>安装具备在线更新的版本后，可在工具内检查、下载和安装后续版本。</p>
+    <div class="actions">
+      <a class="button" id="download" href="https://github.com/kaornao/touhou-unified-updates/releases/tag/v0.2.1-candidate">查看当前版本</a>
+      <a class="button secondary" href="#guide">使用说明</a>
+    </div>
+  </header>
+  <div class="cards">
+    <article>
+      <h2>当前版本</h2>
+      <div id="version" class="version">正在读取版本公告…</div>
+      <p id="notes"></p>
+      <small>更新包由工具独立核对签名和文件校验值。</small>
+    </article>
+    <article>
+      <h2>后续更新</h2>
+      <p>工具运行时自动检查新版。发现更新后，在“设置与状态”中下载，再确认重启工具完成更新。</p>
+      <p>存档、游戏资源和个人设置各自保存，更新只替换工具自身。</p>
+    </article>
+  </div>
+  <section id="guide">
+    <h2>使用说明</h2>
+    <h3>首次运行</h3>
+    <p>完整解压下载包，双击“东方两作一体化修改器.exe”，在顶部选择游戏。保留随包的运行目录。</p>
+    <h3>功能分类</h3>
+    <ul>
+      <li>便利操作：快捷存读档、战斗辅助、游戏规则。</li>
+      <li>存档修改：角色成长、物品装备、技能队伍、任务进度。</li>
+      <li>文件与设置：存档与导出、设置与状态。</li>
+    </ul>
+    <h3>详细操作</h3>
+    <p>点击工具顶部“使用说明”，按页面查看快捷键、操作流程和功能条件。</p>
+    <h3>编辑与更新</h3>
+    <p>存档修改先暂存、校验，再导出副本。更新前导出或撤销暂存修改；更新会关闭并重启工具，游戏无需因此退出。</p>
+    <div class="notice">当前仍为候选版本。窗口与合成数据检查通过；游戏内效果和新宿主流程按发布说明验收。</div>
+  </section>
+  <footer>无需玩家账号或付费服务器。版本公告与更新文件托管于 GitHub；网络访问受实际连接及服务额度影响。</footer>
+</main>
+<script>
+(async()=>{
+  try{
+    const response=await fetch('./feed/candidate.json',{cache:'no-store'});
+    if(!response.ok)throw new Error('unavailable');
+    const head=await response.json();
+    const p=head.payload;
+    if(!p||p.product!=='touhou-unified-desktop')throw new Error('invalid');
+    document.getElementById('version').textContent=p.version;
+    document.getElementById('notes').textContent=Array.isArray(p.notes)?p.notes.join('\n'):String(p.notes||'');
+  }catch{
+    document.getElementById('version').textContent='版本公告暂不可用';
+    document.getElementById('notes').textContent='可从上方“查看最新版本”访问发布记录。';
+  }
+})();
+</script>
+</body>
+</html>
