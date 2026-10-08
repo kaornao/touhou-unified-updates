@@ -9,10 +9,11 @@
     }
   ],
   "tool": {
-    "url": "https://github.com/kaornao/touhou-unified-updates/releases/download/zh-manual-20261008-r2/Touhou-ZH-InstallUpdate-20261008-r2.zip",
-    "sha256": "0014b665708e5efb627089472256627f85405ff0aafbb48f01affebee9e120bc",
-    "bytes": 34428296,
-    "supports_original_install": true
+    "url": "https://github.com/kaornao/touhou-unified-updates/releases/download/zh-manual-20261008-r3/Touhou-ZH-InstallUpdate-20261008-r3.zip",
+    "sha256": "0f6aaf2946b8f91617d475541a6aca20b7262a595862c5112ba9650765ee4081",
+    "bytes": 34431948,
+    "supports_original_install": true,
+    "download_contents_and_speed": true
   },
   "install_channels": {
     "SouzinV": {
