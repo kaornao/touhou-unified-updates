@@ -9,7 +9,19 @@
     }
   ],
   "tool": {
-    "url": "https://github.com/kaornao/touhou-unified-updates/releases/download/zh-manual-20261008/Touhou-ZH-ManualUpdate-20261008-GitHub.zip",
-    "sha256": "aaf7d93a7765671e99efc9c110c3c2805fd8964e71c139aac53badf09557e2f1"
+    "url": "https://github.com/kaornao/touhou-unified-updates/releases/download/zh-manual-20261008-r2/Touhou-ZH-InstallUpdate-20261008-r2.zip",
+    "sha256": "0014b665708e5efb627089472256627f85405ff0aafbb48f01affebee9e120bc",
+    "bytes": 34428296,
+    "supports_original_install": true
+  },
+  "install_channels": {
+    "SouzinV": {
+      "feed": "https://kaornao.github.io/touhou-unified-updates/localization-manual/feeds/souzinv-install-player.json",
+      "version": "20261007-series-names"
+    },
+    "MarokuW": {
+      "feed": "https://kaornao.github.io/touhou-unified-updates/localization-manual/feeds/marokuw-clean-player.json",
+      "version": "20261008-fixes-clean"
+    }
   }
 }
