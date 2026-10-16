@@ -6,6 +6,13 @@
       "url": "https://github.com/kaornao/touhou-unified-updates/releases/download/zh-manual-20261008/MarokuW-ZH-20261008-fixes-player.zip",
       "bytes": 484603736,
       "sha256": "8ba42ed7061770697a40ac89eeb5fc161af7814376a26f728a12c517c2f0ea43"
+    },
+    {
+      "game": "SouzinV",
+      "version": "20261016-bugfixes-equipment",
+      "url": "https://github.com/kaornao/touhou-unified-updates/releases/download/zh-souzinv-20261016-bugfixes/SouzinV-ZH-20261016-bugfixes-equipment-player.zip",
+      "bytes": 236159037,
+      "sha256": "5bcc6a38ec2afda868a48a9a690a6a45aa28cf6a79d732c26f40973bc7c4f757"
     }
   ],
   "tool": {
@@ -18,7 +25,7 @@
   "install_channels": {
     "SouzinV": {
       "feed": "https://kaornao.github.io/touhou-unified-updates/localization-manual/feeds/souzinv-install-player.json",
-      "version": "20261007-series-names"
+      "version": "20261016-bugfixes-equipment"
     },
     "MarokuW": {
       "feed": "https://kaornao.github.io/touhou-unified-updates/localization-manual/feeds/marokuw-clean-player.json",
